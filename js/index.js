@@ -1,7 +1,7 @@
 let data = [];
 let filteredData = [];
 async function fetchData() {
-    let response = await fetch(`/api/index`);
+    let response = await fetch(`/data/index.json`);
     data = await response.json();
     filteredData = data
 }
@@ -24,7 +24,6 @@ function render() {
                 </div>
             </div>
         `
-        // ${(i-offset)%3==0? `</div>` : ""}
     }
     html += "</div>"
     document.getElementById('content').innerHTML = html;
@@ -44,20 +43,6 @@ function more() {
         render()
     }
 }
-
-// function nextPage() {
-//     if (offset + limit < data.filteredData) {
-//         offset = Math.min(offset + limit, data.filteredData);
-//         render()
-//     }
-// }
-
-// function prevPage() {
-//     if (offset - limit > 0) {
-//         offset = Math.max(offset - limit, 0);
-//         render()
-//     }
-// }
 
 const filterButtons = [
     document.getElementById('btnFilterAll'),
