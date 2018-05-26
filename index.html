@@ -1,1 +1,73 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="موقع حسان القوز حيث أجمع فيه الدورات والمشاريع.">
+	<meta name="author" content="Hassan Algoz">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+	<title>حسان القوز</title>
+	<link rel="stylesheet" href="/css/lib/w3.css">
+	<link rel="stylesheet" href="/css/lib/w3-rtl.min.css">
+	<style>
+		body {
+			font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
+		}
+	</style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px" dir="rtl">
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main">
+		<!-- Header -->
+		<header id="portfolio">
+			<div class="w3-container">
+				<!-- About Card -->
+				<div class="w3-row">
+					<div class="w3-card w3-half w3-margin w3-margin-top">
+						<!-- <img src="/img/hassan.jpg" style="width:100%"> -->
+						<div class="w3-container w3-white">
+							<h1><b>حسان القوز</b></h1>
+							<p>مبرمج وطالب علوم المعلومات والحاسب. مهتم بالتعليم. KFUPM. لغة Go من أفضل ما تعلّمت.</p>
+							<div>
+								<a href="//youtube.com/channel/UCaD5hX1OzVezzbIqHm3VHsQ"><img src="/img/Youtube.png" width="32" height="32" alt="Youtube"></a>
+								<a href="//github.com/hassanalgoz"><img src="/img/Github.png" width="32" height="32" alt="Github"></a>
+								<a href="//twitter.com/Hassan_Algoz"><img src="/img/Twitter.png" width="32" height="32" alt="Twitter"></a>
+								<a href="//www.linkedin.com/in/hassan-algoz-77431118"><img src="/img/Linkedin.png" width="32" height="32" alt="Linkedin"></a>
+							</div>
+							<br>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="w3-section w3-bottombar w3-padding-16">
+						<!-- <span class="w3-margin-right">ترشيح:</span>  -->
+						<button class="w3-button w3-black" onclick="selectFilter(this)" value="all" id="btnFilterAll">الكل</button>
+						<button class="w3-button w3-white" onclick="selectFilter(this)" value="courses" id="btnFilterCourses"><i class="fa fa-diamond w3-margin-right"></i> الدورات</button>
+						<button class="w3-button w3-white" onclick="selectFilter(this)" value="maps" id="btnFilterMaps"><i class="fa fa-photo w3-margin-right"></i> الخرائط الذهنية</button>
+						<!-- <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>المقالات</button> -->
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="content">
+			<!-- Rendered -->
+		</div>
+		<!-- Pagination -->
+		<div class="w3-center w3-padding-32">
+			<div class="w3-bar">
+				<button class="w3-bar-item w3-button w3-hover-black" onclick="more()" id="btnMore">المزيد</button>
+			</div>
+		</div>
+		<!-- Footer -->
+		<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top w3-center">
+			<p>الحقوق محفوظة - حسان القوز 2018</p>
+			<!-- <p>صمم بـ <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> -->
+		</footer>
+	</div>
+	<script src="/js/index.js"></script>
+</body>
+</html>
