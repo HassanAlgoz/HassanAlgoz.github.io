@@ -10,29 +10,34 @@ let offset = 0;
 let limit = 6;
 
 function render() {
-    let html = `<div class="w3-row-padding">`;
+    let html = '';
     for(let i = offset; i < Math.min(offset + limit, filteredData.length); i++) {
         let {title, desc, link, img, type} = filteredData[i];
         html += `
-            <div class="w3-third w3-container w3-margin-bottom">
+        <article>
+            ${link? `
                 <a href="${link}" target="_blank">
                     <img src="${img}" alt="${title}" style="width: 100%" class="w3-hover-opacity">
                 </a>
-                <div class="w3-container w3-white">
-                    <p><b>${title}</b></p>
-                    <p>${desc}</p>
-                </div>
+            ` : `
+                <img src="${img}" alt="${title}" style="width: 100%; background-color: #fff;" class="w3-hover-opacity">
+            `}
+                
+            <div class="white">
+                <h3>${title}</h3>
+                <p>${desc}</p>
             </div>
+        </article>
         `
     }
-    html += "</div>"
+    html += ''
     document.getElementById('content').innerHTML = html;
 
     // 'More' Button
     if (limit >= filteredData.length) {
-        document.getElementById('btnMore').classList.add('w3-hide')
+        document.getElementById('btnMore').classList.add('hide')
     } else {
-        document.getElementById('btnMore').classList.remove('w3-hide')
+        document.getElementById('btnMore').classList.remove('hide')
     }
 }
 
@@ -58,11 +63,11 @@ function setFilter(value) {
 
 function selectFilter(button) {
     filterButtons.forEach(btn => {
-        btn.classList.remove('w3-black')
-        btn.classList.add('w3-white')
+        btn.classList.remove('black')
+        btn.classList.add('white')
     })
-    button.classList.toggle('w3-black')
-    button.classList.toggle('w3-white')
+    button.classList.toggle('black')
+    button.classList.toggle('white')
     setFilter(button.getAttribute('value'))
     render()
 }
@@ -71,4 +76,10 @@ function selectFilter(button) {
 (async function() {
     await fetchData()
     render()
+    
+    document.getElementById('copyright').innerText = `الحقوق محفوظة - حسان القوز ${new Date().getFullYear()} ©`
 })()
+
+function wrap(str, pre, post) {
+    return `${pre}${str}${post}`;
+}
