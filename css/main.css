@@ -12,6 +12,11 @@ h6 {
     margin: 0;
 }
 
+.wrapper {
+    max-width: 960px;
+	margin: 0 auto 30px;
+}
+
 .center {
     margin: 0 auto;
     text-align: center;
@@ -41,7 +46,7 @@ button:hover {
 }
 
 .about {
-    max-width: 50%;
+    max-width: 460px;
 }
 
 .card {
@@ -56,16 +61,11 @@ button:hover {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 30px;
 }
-
-
-/* Generic styles ----------------------------------------------*/
-.grid {
-    max-width: 960px;
-    margin: 0 auto 30px;
-}
+/*----------------------------------------------------------------*/
 
 article {
     position: relative;
+    background-color: rgb(253, 253, 253);
 }
 
 .article-img {
@@ -74,10 +74,10 @@ article {
     object-fit: cover;
 }
 
-.article-title {
+/* .article-title {
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.2);
-}
+} */

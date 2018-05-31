@@ -22,11 +22,8 @@ function render() {
             ` : `
                 <img src="${img}" alt="${title}" style="width: 100%; background-color: #fff;" class="w3-hover-opacity">
             `}
-                
-            <div class="white">
-                <h3>${title}</h3>
-                <p>${desc}</p>
-            </div>
+            <h3>${title}</h3>
+            <p>${desc}</p>
         </article>
         `
     }
