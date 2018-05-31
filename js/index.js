@@ -1,10 +1,5 @@
-let data = [];
-let filteredData = [];
-async function fetchData() {
-    let response = await fetch(`/data/index.json`);
-    data = await response.json();
-    filteredData = data
-}
+// let data = [];
+let filteredData = data;
 
 let offset = 0;
 let limit = 6;
@@ -71,12 +66,6 @@ function selectFilter(button) {
 
 // Main
 (async function() {
-    await fetchData()
     render()
-    
     document.getElementById('copyright').innerText = `الحقوق محفوظة - حسان القوز ${new Date().getFullYear()} ©`
 })()
-
-function wrap(str, pre, post) {
-    return `${pre}${str}${post}`;
-}
