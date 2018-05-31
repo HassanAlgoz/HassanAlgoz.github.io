@@ -28,10 +28,17 @@
         "desc": "دروس لغة جافا سكريبت بطريقة سهلة وعملية بعكس الطرق النظرية. في هذه الدورة نركز على استخدام مكونات اللغة بدلاً من أن نمر على كل أجزاء اللغة بلا تطبيق عملي. سوف تتعلم بإذن الله الأساسيات والدوال والحلقات وال DOM وال Event Listeners وغيرها ما يفيدك في مشوارك لتطوير الويب والمواقع."
     },
     {
-        "title": "خريطة عالم تطوير المواقع",
+        "title": "خريطة المبرمج",
         "link": "https://coggle.it/diagram/WTAXmAvDlgABMuwo/t/software-developer/878aee2afebc5a76b370befe6bc2db81d04009db90bd0ff8f5e262c5eb3256c7",
-        "img": "https://static.coggle.it/diagram/WTAXmAvDlgABMuwo/thumbnail?cachebust=3&amp;mtime=2018-05-26T10:14:02.847Z",
+        "img": "https://static.coggle.it/diagram/WTAXmAvDlgABMuwo/thumbnail?cachebust=3&mtime=2018-05-31T12:17:36.392Z",
         "type": "maps",
-        "desc": "تحتوي الخريطة على لغات البرمجة والأدوات وأطر العمل التي يجب أن تتعلمها حتى تصبح مطور مواقع."
+        "desc": "تحتوي الخريطة على لغات البرمجة والأدوات وأطر العمل التي يجب أن تتعلمها حتى تصبح مبرمجاً."
+    },
+    {
+        "title": "الوعود | Promises",
+        "link": "",
+        "img": "/img/soon.gif",
+        "type": "courses",
+        "desc": "قريبا..."
     }
 ]
