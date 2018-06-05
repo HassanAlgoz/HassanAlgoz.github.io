@@ -36,9 +36,9 @@
     },
     {
         "title": "الوعود | Promises",
-        "link": "",
-        "img": "/img/soon.gif",
+        "link": "https://www.youtube.com/playlist?list=PLrvHCesHYw3_XIMJKP70iMcerP23kKmSb",
+        "img": "https://i9.ytimg.com/vi/-7SiWxVKWFM/hqdefault.jpg?sqp=CODE29gF&rs=AOn4CLAoyxyDss0XI6viPE3Pq7w0rFtSSQ",
         "type": "courses",
-        "desc": "قريبا..."
+        "desc": "الوعود تسهّل علينا القيام بالعمليات اللاتزامنية (Asynchronous) بدل أن نستخدم النداءات العكسية (Callbacks). الوعد (Promise) يمثّل الوعد بإتمام عملية ما ، ينتج عنها قيمة أو خطأ في المستقبل. الهدف هو استغلال وقت المُعالج بدل انتظاره عملية خارجة عن تحكمه."
     }
 ]
