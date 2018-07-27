@@ -2,15 +2,16 @@
 let filteredData = data;
 
 let offset = 0;
-let limit = 6;
+let limit = 9;
+let stepSize = limit;
 
 function render() {
     let html = '';
-    for(let i = offset; i < Math.min(offset + limit, filteredData.length); i++) {
-        let {title, desc, link, img, type} = filteredData[i];
+    for (let i = offset; i < Math.min(offset + limit, filteredData.length); i++) {
+        let { title, desc, link, img, type } = filteredData[i];
         html += `
         <article>
-            ${link? `
+            ${link ? `
                 <a href="${link}" target="_blank">
                     <img src="${img}" alt="${title}" style="width: 100%" class="w3-hover-opacity">
                 </a>
@@ -33,7 +34,6 @@ function render() {
     }
 }
 
-let stepSize = 6;
 function more() {
     if (limit < filteredData.length) {
         limit = Math.min(limit + stepSize, filteredData.length);
@@ -65,7 +65,7 @@ function selectFilter(button) {
 }
 
 // Main
-(async function() {
+(async function () {
     render()
     document.getElementById('copyright').innerText = `الحقوق محفوظة - حسان القوز ${new Date().getFullYear()} ©`
 })()
