@@ -74,21 +74,12 @@ window.addEventListener('load', async () => {
   $input = document.getElementById("search");
   $table = document.getElementById("table");
 
+  
   await wait(ready)
   randomize()
   render()
 
-  $input.onkeypress = update;
-  
-  $input.onkeyup = (evt) => {
-    switch(event.keyCode)
-    {
-       case 8 /* Backspace */:  
-       case 46 /* Delete */: {
-         update(evt)
-       } break;
-    }
-  }
+  $input.onkeyup = update;
 })
 
 function randomize() {
@@ -102,10 +93,7 @@ function randomize() {
 
 function update(evt) {
   let input = evt.target.value;
-  if (evt.key.length === 1) {
-    input += evt.key;
-  }
-  
+
   if (!input || input.trim().length === 0) {
     evt.target.value = input.trim()
     randomize()
@@ -153,12 +141,14 @@ function render() {
   </tr>`
 
   let rows = subset.slice(0, limit)
-  .map(entry => `
+  .map(entry => (!!entry) ? `
     <tr title="${links[entry.sourceIndex].source}">
       <td style="text-align: right; direction: rtl;">${entry.arabic.text}</td>
       <td style="text-align: left;">${entry.english.text}</td>
     </tr>
-  `).join('');
+  `: null)
+  .filter(entry => !!entry)
+  .join('');
 
   $table.innerHTML = headerRow + rows;
 }
