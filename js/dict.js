@@ -1,18 +1,9 @@
-// Array.prototype.flatten = function () {
-//   return this.reduce((A, B) => A.concat(B));
-// }
-
 // Initialize Data
 let dict = [];
 let subset = [];
 
 // Limits the number of rows that render on the page.
 const limit = 100;
-
-// Sources
-// https://www.arabeyes.org/Download_technical_dictionary
-// http://www.arabicacademy.org.eg/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D8%B9/ctl/FileViewer/mid/431/ItemID/1096
-// http://www.arabterm.org/index.php?id=41&L=1&tx_3m5techdict_pi1[filterCategory]=47
 
 async function populateDict(url) {
   let res = await fetch(url)
