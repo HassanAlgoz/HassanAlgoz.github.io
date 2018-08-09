@@ -75,59 +75,73 @@ window.addEventListener('load', async () => {
   $table = document.getElementById("table");
 
   await wait(ready)
+  randomize()
+  render()
 
-  $input.onkeyup = update;
-
-  renderRandom()
+  $input.onkeypress = update;
+  
+  $input.onkeyup = (evt) => {
+    switch(event.keyCode)
+    {
+       case 8 /* Backspace */:  
+       case 46 /* Delete */: {
+         update(evt)
+       } break;
+    }
+  }
 })
 
-function renderRandom() {
+function randomize() {
   subset = [];
   // Generate 100 random integers
   for(let i = 0; i < limit; i++) {
     let idx = Math.floor(Math.random() * dict.length);
     subset.push(dict[idx])
   }
-
-  render()
 }
-
 
 function update(evt) {
   let input = evt.target.value;
-  if (input && input.length > 0) {
+  if (evt.key.length === 1) {
+    input += evt.key;
+  }
+  
+  if (!input || input.trim().length === 0) {
+    evt.target.value = input.trim()
+    randomize()
+    render()
+    return;
+  }
     
-    switch(unicode.getLanguage(input)) {
-      
-      // English Input
-      case 'en': {
-        const inputWords = input.split(' ').map(unicode.normalizeEnglish).filter(w => !!w)
-        const matches = inputWords.map(inputWord => {
-          // each input word would contribute a whole pass of finding matches
-          return dict.filter(entry => {
-            return entry.english.words.findIndex(word => word.startsWith(inputWord)) >= 0;
-          })
+  switch(unicode.getLanguage(input)) {
+    
+    // English Input
+    case 'en': {
+      const inputWords = input.split(' ').map(unicode.normalizeEnglish).filter(w => !!w)
+      const matches = inputWords.map(inputWord => {
+        // each input word would contribute a whole pass of finding matches
+        return dict.filter(entry => {
+          return entry.english.words.findIndex(word => word.startsWith(inputWord)) >= 0;
         })
-        // take the intersection of the matches
-        subset = arraysIntersection(matches)
-        render()
-      } break;
+      })
+      // take the intersection of the matches
+      subset = arraysIntersection(matches)
+      render()
+    } break;
 
-      // Arabic Input
-      case 'ar': {
-        const inputWords = input.split(' ').map(unicode.normalizeArabic).filter(w => !!w)
-        const matches = inputWords.map(inputWord => {
-          // each input word would contribute a whole pass of finding matches
-          return dict.filter(entry => {
-            return entry.arabic.words.findIndex(word => word.startsWith(inputWord)) >= 0;
-          })
+    // Arabic Input
+    case 'ar': {
+      const inputWords = input.split(' ').map(unicode.normalizeArabic).filter(w => !!w)
+      const matches = inputWords.map(inputWord => {
+        // each input word would contribute a whole pass of finding matches
+        return dict.filter(entry => {
+          return entry.arabic.words.findIndex(word => word.startsWith(inputWord)) >= 0;
         })
-        // take the intersection of the matches
-        subset = arraysIntersection(matches)
-        render()
-      } break;
-    }
-
+      })
+      // take the intersection of the matches
+      subset = arraysIntersection(matches)
+      render()
+    } break;
   }
 }
 
@@ -140,7 +154,7 @@ function render() {
 
   let rows = subset.slice(0, limit)
   .map(entry => `
-    <tr title="${links[entry.sourceIndex]}">
+    <tr title="${links[entry.sourceIndex].source}">
       <td style="text-align: right; direction: rtl;">${entry.arabic.text}</td>
       <td style="text-align: left;">${entry.english.text}</td>
     </tr>
@@ -175,7 +189,7 @@ function arraysIntersection(arrays) {
     }
   }
 
-  // Flatten arrays into one array
+  // Flatten the arrays into one array
   return intersection.reduce((A, B) => A.concat(B));
 }
 
