@@ -1,3 +1,7 @@
+// Array.prototype.flatten = function () {
+//   return this.reduce((A, B) => A.concat(B));
+// }
+
 // Initialize Data
 let dict = [];
 let subset = [];
@@ -5,61 +9,48 @@ let subset = [];
 // Limits the number of rows that render on the page.
 const limit = 100;
 
-let links = [
-  {
-    url: '../data/arabeyes.org.csv',
-    source: 'www.arabeyes.org',
-    // https://www.arabeyes.org/Download_technical_dictionary
-  },
-  {
-    url: '../data/arabicacademy.org.eg.csv',
-    source: 'www.arabicacademy.org.eg',
-    // http://www.arabicacademy.org.eg/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D8%B9/ctl/FileViewer/mid/431/ItemID/1096
-  },
-  {
-    url: '../data/arabterem.org.csv',
-    source: 'www.arabterm.org',
-    // http://www.arabterm.org/index.php?id=41&L=1&tx_3m5techdict_pi1[filterCategory]=47
-  },
-];
+// Sources
+// https://www.arabeyes.org/Download_technical_dictionary
+// http://www.arabicacademy.org.eg/%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9/%D9%85%D8%B7%D8%A8%D9%88%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D8%B9/ctl/FileViewer/mid/431/ItemID/1096
+// http://www.arabterm.org/index.php?id=41&L=1&tx_3m5techdict_pi1[filterCategory]=47
 
-let ready = false;
-async function init() {
-  Promise.all(
-    links.map((link, index) => {
-      populateDict(link.url, index)
-    })
-  )
-  .then(() => {
-    ready = true;
-  })
-  .catch(console.error)
-}
-init()
-
-async function populateDict(url, sourceIndex) {
+async function populateDict(url) {
   let res = await fetch(url)
   let text = await res.text()
   let lines = text.split('\n')
+  
   for(const line of lines) {
-    let [english, arabic] = line.split(",")
-    if ((english && english.trim().length > 0) && (arabic && arabic.trim().length > 0)) {
-      english = english.trim()
-      arabic = arabic.trim()
+    let values = line.split(",")
+
+    // Identify the English part and the Arabic part of the line.
+    let english = '', arabic = '';
+    for(let i = 1; i < values.length; i++) {
+      if (unicode.getLanguage(values[i]) === 'ar') {
+        english = values.slice(0, i).join(',');
+        arabic = values.slice(i).join(',');
+        break;
+      }
+    }
+    
+    if (!english || !arabic) {
+      continue;
+    }
+
+    if (english && arabic) {
       
       dict.push({
         
         english: {
           text: english,
-          words: english.split(' ').map(unicode.normalizeEnglish).filter(word => !!word)
+          // Search words (like tags)
+          words: english.split(' ')
         },
         
         arabic: {
           text: arabic,
-          words: arabic.split(' ').map(unicode.normalizeArabic).filter(word => !!word)
+          // Search words (like tags)
+          words: arabic.split(' ')
         },
-
-        sourceIndex: sourceIndex,
 
       });
 
@@ -74,12 +65,19 @@ window.addEventListener('load', async () => {
   $input = document.getElementById("search");
   $table = document.getElementById("table");
 
-  
-  await wait(ready)
-  randomize()
-  render()
+  async function init() {
+    populateDict('../data/data.csv')
+    .then(() => {
+      randomize()
+      render()
+      console.log('No. Entries:', Object.keys(dict).length)
+    })
+    .catch(console.error)
+  }
+  init()
 
   $input.onkeyup = update;
+  
 })
 
 function randomize() {
@@ -112,8 +110,14 @@ function update(evt) {
           return entry.english.words.findIndex(word => word.startsWith(inputWord)) >= 0;
         })
       })
+    
       // take the intersection of the matches
       subset = arraysIntersection(matches)
+      // sort based on number of words in input
+      subset.sort((A, B) => {
+        const diff = (A.english.words.length - inputWords.length) - (B.english.words.length - inputWords.length);
+        return diff;
+      })
       render()
     } break;
 
@@ -126,8 +130,14 @@ function update(evt) {
           return entry.arabic.words.findIndex(word => word.startsWith(inputWord)) >= 0;
         })
       })
+
       // take the intersection of the matches
       subset = arraysIntersection(matches)
+      // sort based on number of words in input
+      subset.sort((A, B) => {
+        const diff = (A.arabic.words.length - inputWords.length) - (B.arabic.words.length - inputWords.length);
+        return diff;
+      })
       render()
     } break;
   }
@@ -142,7 +152,7 @@ function render() {
 
   let rows = subset.slice(0, limit)
   .map(entry => (!!entry) ? `
-    <tr title="${links[entry.sourceIndex].source}">
+    <tr>
       <td style="text-align: right; direction: rtl;">${entry.arabic.text}</td>
       <td style="text-align: left;">${entry.english.text}</td>
     </tr>
@@ -168,19 +178,16 @@ function arraysIntersection(arrays) {
     return arrays[0];
   }
 
-  const intersection = [];
+  const result = [];
   for(let i = 0; i < arrays.length; i++) {
-    let A = arrays[i];
     for(let j = 0; j < arrays.length; j++) {
-      let B = arrays[j];
-      if (i !== j) {
-        intersection.push(A.filter(value => -1 !== B.indexOf(value)))
-      }
+      if (i === j) continue;
+      result.push(arrays[i].filter(value => arrays[j].indexOf(value) >= 0))
     }
   }
 
   // Flatten the arrays into one array
-  return intersection.reduce((A, B) => A.concat(B));
+  return result.reduce((A, B) => A.concat(B));
 }
 
 const unicode = {
