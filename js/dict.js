@@ -11,17 +11,10 @@ async function populateDict(url) {
   let lines = text.split('\n')
   
   for(const line of lines) {
-    let values = line.split(",")
-
-    // Identify the English part and the Arabic part of the line.
-    let english = '', arabic = '';
-    for(let i = 1; i < values.length; i++) {
-      if (unicode.getLanguage(values[i]) === 'ar') {
-        english = values.slice(0, i).join(',');
-        arabic = values.slice(i).join(',');
-        break;
-      }
-    }
+    let [english, arabic] = line.split(",")
+    
+    english = (english) ? english.trim() : null;
+    arabic = (arabic) ? arabic.trim() : null;
     
     if (!english || !arabic) {
       continue;
@@ -34,13 +27,13 @@ async function populateDict(url) {
         english: {
           text: english,
           // Search words (like tags)
-          words: english.split(' ')
+          words: english.split(' ').map(unicode.normalizeEnglish).filter(w => !!w)
         },
         
         arabic: {
           text: arabic,
           // Search words (like tags)
-          words: arabic.split(' ')
+          words: arabic.split('،').map(unicode.normalizeArabic).filter(w => !!w)
         },
 
       });
@@ -56,16 +49,22 @@ window.addEventListener('load', async () => {
   $input = document.getElementById("search");
   $table = document.getElementById("table");
 
-  async function init() {
-    populateDict('../data/data.csv')
-    .then(() => {
-      randomize()
-      render()
-      console.log('No. Entries:', Object.keys(dict).length)
-    })
-    .catch(console.error)
+  try {
+    await populateDict('https://www.arabeyes.org/techdict/techdict.csv')
+    console.log('Successfully fetched dictionary from www.arabeyes.org')
+  } catch (err) {
+    console.warn(`Coudn't fetch dictionary from www.arabeyes.org :`, err)
+    try {
+      await populateDict('../data/techdict.csv')
+      console.log('Successfully fetched the saved dictionary copy of www.arabeyes.org')
+    } catch (err) {
+      console.error(`Coudn't fetch dictionary:`, err)
+    }
   }
-  init()
+
+  randomize()
+  render()
+  console.log('# Terms:', Object.keys(dict).length)
 
   $input.onkeyup = update;
   
