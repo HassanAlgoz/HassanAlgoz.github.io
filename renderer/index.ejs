@@ -28,9 +28,10 @@
 			</div>
 		</header>
 
-		<div>
-			<a href="/dict.html">مصطلحات حاسوبية</a>
-		</div>
+		<ul>
+			<li><a href="/p/dict.html">مصطلحات حاسوبية</a></li>
+			<li><a href="/p/editor.html">المُحرّر</a></li>
+		</ul>
 		
 		<!-- Main Content -->
 		<main>
@@ -41,20 +42,7 @@
 			</div>
 			<hr/>
 			<section class="grid" id="content">
-				<!-- Rendered -->
-				<% data.forEach((elem) => { %>
-				<article>
-					<% if (elem.link) { %>
-					<a href="<%= elem.link %>" target="_blank">
-						<img src="<%= elem.img %>" alt="<%= elem.title %>" style="width: 100%" class="w3-hover-opacity">
-					</a>
-					<%} else {%>
-					<img src="<%= elem.img %>" alt="<%= elem.title %>" style="width: 100%; background-color: #fff;" class="w3-hover-opacity">
-					<%}%>
-					<h3><%= elem.title %></h3>
-					<p><%= elem.desc %></p>
-				</article>
-				<% }) %>
+				<!-- Dynamically Rendered -->
 			</section>
 		</main>
 		
@@ -67,6 +55,7 @@
 		<footer class="center">
 			<p id="copyright"></p>
 		</footer>
+
 	</div>
 
 	<!-- SCRIPT -->
