@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const dataFile = 'index.json'
 const templateFile = 'index.ejs'
-const outputFile = 'index.html'
+const outputFile = '../index.html'
 
 let data = (() => {
     let data;

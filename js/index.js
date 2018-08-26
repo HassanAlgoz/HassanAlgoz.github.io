@@ -10,15 +10,16 @@ function render() {
     for (let i = offset; i < Math.min(offset + limit, filteredData.length); i++) {
         let { title, desc, link, img, type } = filteredData[i];
         html += `
-        <article>
+        <article class="card">
             ${link ? `
-                <a href="${link}" target="_blank">
-                    <img src="${img}" alt="${title}" style="width: 100%" class="w3-hover-opacity">
+                <a href="${link}" target="_blank" class="no-underline">
+                    <img src="${img}" alt="${title}" style="width: 100%">
+                <h3>${title}</h3>
                 </a>
             ` : `
-                <img src="${img}" alt="${title}" style="width: 100%; background-color: #fff;" class="w3-hover-opacity">
+                <img src="${img}" alt="${title}" style="width: 100%; background-color: #fff;">
+                <h3>${title}</h3>
             `}
-            <h3>${title}</h3>
             <p>${desc}</p>
         </article>
         `

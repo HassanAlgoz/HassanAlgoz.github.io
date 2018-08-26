@@ -49,18 +49,18 @@ window.addEventListener('load', async () => {
   $input = document.getElementById("search");
   $table = document.getElementById("table");
 
-  try {
-    await populateDict('https://www.arabeyes.org/techdict/techdict.csv')
-    console.log('Successfully fetched dictionary from www.arabeyes.org')
-  } catch (err) {
-    console.warn(`Coudn't fetch dictionary from www.arabeyes.org :`, err)
+  // try {
+  //   await populateDict('https://www.arabeyes.org/techdict/techdict.csv')
+  //   console.log('Successfully fetched dictionary from www.arabeyes.org')
+  // } catch (err) {
+  //   console.warn(`Coudn't fetch dictionary from www.arabeyes.org :`, err)
     try {
       await populateDict('../data/techdict.csv')
       console.log('Successfully fetched the saved dictionary copy of www.arabeyes.org')
     } catch (err) {
       console.error(`Coudn't fetch dictionary:`, err)
     }
-  }
+  // }
 
   randomize()
   render()
@@ -71,11 +71,13 @@ window.addEventListener('load', async () => {
 })
 
 function randomize() {
-  subset = [];
-  // Generate 100 random integers
+  // Making the size of the array 'limit' at minimum
+  subset[limit] = 0; 
+  subset = subset.slice(0, limit)
+  // Generate 'limit' amount of random integers
   for(let i = 0; i < limit; i++) {
     let idx = Math.floor(Math.random() * dict.length);
-    subset.push(dict[idx])
+    subset[i] = dict[idx]
   }
 }
 
