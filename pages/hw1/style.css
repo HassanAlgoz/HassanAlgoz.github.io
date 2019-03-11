@@ -1,0 +1,184 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px 15px;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.title {
+    margin-bottom: 5px;
+}
+
+h1 small {
+    color: gray;
+    font-size: 13px;
+}
+
+
+/* Alignment */
+.block-center {
+    margin: 0 auto;
+    display: block;
+}
+
+.float-right { float: right; }
+.float-left { float: left; }
+.float-right::after,
+.float-left::after { clear: both; }
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.column-count-1 { column-count: 1; }
+.column-count-2 { column-count: 2; }
+.column-count-3 { column-count: 3; }
+/* --- */
+
+/* img */
+img.logo {
+    max-width: 150px;
+    height: auto;
+}
+/* --- */
+
+/* Tables */
+table {
+    border-collapse: collapse;
+}
+
+td ,th {
+    padding: 6px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+/* --- */
+
+/* Lists */
+ul.square { list-style-type: square; }
+ol.roman { list-style-type: upper-roman; }
+/* --- */
+
+/* Navigation Bar */
+.navbar {
+    text-align: center;
+    display: block;
+}
+.navbar a {
+    display: inline-block;
+    width: 20%;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 8px 6px;
+    margin: 0;
+}
+.navbar a:hover {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+}
+.sticky + * {
+    padding-top: 60px;
+}
+/* --- */
+
+/* Sidebar Links */
+aside {
+    width: 200px;
+    height: 500px;
+    float: right;
+    background-color: rgb(110, 110, 110);
+    color: #fff;
+    overflow-y: auto;
+    margin-right: -15px;
+    margin-left: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+aside::after { clear: both; }
+aside nav a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 6px;
+}
+aside nav a:hover {
+    background-color: #ccc;
+}
+aside h3 {
+    padding-left: 6px;
+}
+/* --- */
+
+/* Button-like */
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+button {
+    cursor: pointer;
+}
+/* --- */
+
+/* Form */
+form {
+    width: 350px;
+    padding-left: 20px;
+    overflow: auto;
+}
+form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+form ul {
+    margin-top: 0;
+    padding-left: 100px;
+}
+form ul li {
+    list-style: none;
+}
+form footer {
+    text-align: center;  
+}
+form footer button {
+    width: 30%;
+}
+/* --- */
+
+/* Cards */
+.card {
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: white;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+    margin-top: 0;
+}
+.card p::first-letter {
+    font-size: 1.55em;
+    color: red;
+}
+/* --- */

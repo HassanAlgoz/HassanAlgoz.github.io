@@ -46,9 +46,12 @@ h6 {
 
 <!-- Custom -->
 <link rel="stylesheet" href="/main.css">
-	<title>حسان القوز</title>
+	<title>القاموس التقني</title>
+	<link rel="stylesheet" href="/pages/dict/dict.css">
+	<!-- SCRIPT -->
+	<script src="/pages/dict/dict.js" type="module"></script>
 </head>
-<body dir="rtl">
+<body>
 	<nav dir="rtl">
     <label for="show-menu" class="show-menu">Show Menu</label>
     <input type="checkbox" id="show-menu" role="button">
@@ -66,40 +69,32 @@ h6 {
 </nav>
 
 	<div class="wrapper">
-		<header class="about card">
-    <h1>حسان القوز</h1>
-    <p>مهندس وطالب علوم الحاسب والمعلومات ، مهتم بنشر العلم.</p>
-    <div>
-        <a href="//youtube.com/channel/UCaD5hX1OzVezzbIqHm3VHsQ"><img src="/assets/img/YouTube.png" width="32" height="32" alt="Youtube"></a>
-        <a href="//github.com/hassanalgoz"><img src="/assets/img/Github.png" width="32" height="32" alt="Github"></a>
-        <a href="//twitter.com/Hassan_Algoz"><img src="/assets/img/Twitter.png" width="32" height="32" alt="Twitter"></a>
-        <a href="//www.linkedin.com/in/hassan-algoz-77431118"><img src="/assets/img/Linkedin.png" width="32" height="32" alt="Linkedin"></a>
-    </div>
-</header>
 		<main>
-			<div>
-				<button class="active" onclick="selectFilter(this)" value="all" id="btnFilterAll">الكل</button>
-				<button class="" onclick="selectFilter(this)" value="courses" id="btnFilterCourses"><i class="fa fa-diamond w3-margin-right"></i> دورات تقنية</button>
-				<button class="" onclick="selectFilter(this)" value="maps" id="btnFilterMaps"><i class="fa fa-photo w3-margin-right"></i> خرائط الذهنية</button>
-				<button class="" onclick="selectFilter(this)" value="posts" id="btnFilterPosts"><i class="fa fa-pencil w3-margin-right"></i> خواطر</button>
+			<h1 id="title">مصطلحات حاسوبية</h1>
+			<div id="subtitle">
+				المصدر: <a href="https://www.arabeyes.org/Download_technical_dictionary">www.ArabEyes.org</a>
 			</div>
-			<hr/>
-			<section class="grid" id="content">
+			<div>
+				<input
+				type="text"
+				id="search"
+				placeholder="Search"
+				title="Type in a term"
+				autocomplete="off"
+				autofocus
+				/>
+			</div>
+			
+			<table id="table">
 				<!-- Dynamically Rendered -->
-			</section>
+			</table>
 		</main>
 		
-		<!-- Pagination -->
-		<div class="center">
-			<button class="" onclick="more()" id="btnMore">المزيد</button>
-		</div>
 		
+		<!-- Footer -->
 		<footer class="center">
     <p id="copyright"></p>
 </footer>
 	</div>
-
-	<!-- SCRIPT -->
-	<script src="/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="موقع حسان القوز حيث يجمع فيه الدورات والمشاريع.">
+<meta name="author" content="Hassan Algoz">
+
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+
+<!-- Prioritized CSS -->
+<style>
+body {
+    margin: 0;
+    font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 960px;
+	margin: 0 auto 30px;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+</style>
+
+<!-- Custom -->
+<link rel="stylesheet" href="/main.css">
+	<title>محرر مارك_داون</title>
+	<link rel="stylesheet" href="/pages/editor/editor.css">
+</head>
+<body>
+	<div id="app" class="grid">
+		
+		<!-- Top Bar -->
+		<div id="topBar">
+			<div id="topBar-left">
+			</div>
+			<div id="topBar-right">
+				<button @click="insertLink()"><img src="/assets/icons/icons8-attach-50.png" alt="Link"></button>
+				<button @click="insertImage()"><img src="/assets/icons/icons8-image-50.png" alt="Image"></button>
+				<button @click="insertCode()"><img src="/assets/icons/icons8-source-code-filled-50.png" alt="Code"></button>
+				<button @click="insertBold()"><img src="/assets/icons/icons8-bold-50.png" alt="Bold"></button>
+				<button @click="insertItalic()"><img src="/assets/icons/icons8-italic-50.png" alt="Italic"></button>
+				<button @click="saveText()"><img src="/assets/icons/icons8-download-24.png" alt="Download"></button>
+			</div>
+		</div>
+
+		<div id="lineNumbers" v-html="lineNumbers"></div>
+		<textarea
+			id="code"
+			v-model="code"
+			autofocus
+			@keydown.alt.76.prevent="insertLink()"
+			@keydown.ctrl.enter.prevent="indent()"
+			@keydown.ctrl.shift.enter.prevent="outdent()"
+			@keypress="keypress(event)"
+			@keyup="keyup(event)"
+			>
+		</textarea>
+
+		<div id="preview" v-html="preview"></div>
+		
+		<!-- Bottom Bar -->
+		<div id="bottomBar">
+			CapsLock: {{capsLock? 'ON' : 'OFF'}}
+			| length: {{length}}
+		</div>
+
+	
+	<!-- SCRIPTS -->
+	<!-- lib -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+	<!-- user -->
+	<script type="module" src="/pages/editor/main.js"></script>
+</body>
+</html>
