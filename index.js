@@ -9,7 +9,6 @@ function render() {
     let html = "";
     for (let i = offset; i < Math.min(offset + limit, filteredData.length); i++) {
         let { title, desc, link, img, category } = filteredData[i];
-        console.log(img);
         html += `
         <article class="card">
             <a href="${link}" target="_blank" class="no-underline">
@@ -65,7 +64,5 @@ function selectFilter(button) {
     const response = await fetch("/data/index.json");
     data = await response.json();
     filteredData = data;
-    console.log(data);
     render();
-    document.getElementById("copyright").innerText = `الحقوق محفوظة - حسان القوز ${new Date().getFullYear()} ©`;
 })();
