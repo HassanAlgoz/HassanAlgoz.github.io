@@ -3,10 +3,13 @@
 <head>
     <% include src/pages/parts/_head.ejs %>
     <title><%= title %> - <%= date %></title>
+    <link rel="stylesheet" href="/posts/layout.css">
 </head>
 <body dir="rtl">
     <% include src/pages/parts/_nav.ejs %>
-    <%- body %>
+    <div class="wrapper">
+        <%- body %>
+    </div>
     <% include src/pages/parts/_footer.ejs %>
 </body>
 </html>

@@ -11,7 +11,7 @@ function render() {
         let { title, desc, link, img, category } = filteredData[i];
         html += `
         <article class="card">
-            <a href="${link}" target="_blank" class="no-underline">
+            <a href="${link}" class="no-underline">
                 ${img ? `<img src="${img}" alt="${title}" style="width: 100%">` : ""}
             <h3>${title}</h3>
             </a>

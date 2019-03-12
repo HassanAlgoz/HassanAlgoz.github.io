@@ -34,7 +34,7 @@ body,
     "preview code lineNumbers"
     "bottomBar bottomBar bottomBar"
 	;
-    /* grid-gap: 0px; */
+    grid-gap: 0px;
 }
 
 #topBar {
@@ -56,14 +56,17 @@ body,
 	text-align: center;
 }
 #topBar-right button {
-	width: 32px;
-	height: 26px;
+	font-family: 'Droid Arabic Kufi', monospace;
+	padding: 4px 8px;
+	font-size: 12px;
+	margin: 0;
+	max-height: 100%;
+	border: none;
+}
+#topBar-right button:hover {
+	background-color: #19c589; 
+}
 
-}
-#topBar-right button img {
-	width: 18px;
-	height: 18px;
-}
 #code {
 	grid-area: code;
 	direction: rtl;
@@ -111,15 +114,6 @@ body,
 	color: #F8F8F0;
 	font-size: 12px;
 	font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'sans-serif';
-}
-
-button {
-	height: 100%;
-	background-color: whitesmoke;
-	border: 1px solid #f8f8f8;
-}
-button:hover {
-	cursor: pointer;
 }
 
 pre {
