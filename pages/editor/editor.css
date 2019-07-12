@@ -8,13 +8,6 @@
 } */
 /* font-family: 'Droid Arabic Naskh',Helvetica,Arial,sans-serif; */
 
-* {
-	/* font: 14px 'lucida grande',tahoma,verdana,arial,sans-serif;
-	line-height: 26px;
-	color: #f8f8f8; */
-	line-height: 26px;
-}
-
 html,
 body,
 #app {
@@ -71,6 +64,7 @@ body,
 	grid-area: code;
 	direction: rtl;
 	font: 14px 'Droid Arabic Kufi', monospace;
+	line-height: 26px;
 	vertical-align: middle;
 	background-color: #131314;
 	vertical-align: baseline;
@@ -87,6 +81,7 @@ body,
 	grid-area: lineNumbers;
 	direction: rtl;
 	font: 14px 'Droid Arabic Kufi', monospace;
+	line-height: 26px;
 	vertical-align: text-bottom;
 	background-color: #131314;
 	vertical-align: baseline;

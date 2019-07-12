@@ -1,0 +1,17 @@
+.toggler {
+    margin: -8px 0;
+    padding: 0 8px;
+    font-size: 32px;
+    color: #333;
+    background: none;
+    border: none;
+}
+.key {
+    font-weight: bold;
+}
+.key:hover {
+    cursor: pointer;
+}
+.answer {
+    margin: 0;
+}

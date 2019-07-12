@@ -1,0 +1,126 @@
+
+/* for showing debug messages in HTML */
+.debug {
+    display: none;
+}
+
+
+input[type="range"] {
+    cursor: ew-resize;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Context Menu */
+#contextMenu {
+    width: 256px;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: block;
+    z-index: 99;
+    background-color: white;
+}
+
+#contextMenu .menu-options {
+    list-style: none;
+    padding: 10px 0;
+}
+
+#contextMenu .menu-options .menu-option {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 40px 10px 20px;
+    cursor: pointer;
+}
+
+#contextMenu .menu-options .menu-option:hover {
+    background: #f8f9fa;
+}
+
+tr.selected {
+    color: white;
+    background-color: #28a745 !important;
+}
+
+region.wavesurfer-region:before {
+    content: attr(data-region-label);
+    color: black;
+    font-weight: bold;
+}
+
+region {
+  z-index: 3 !important;
+}
+
+region.wavesurfer-region[data-region-highlight] {
+  border: 1px solid rgb(86, 180, 239);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);
+}
+
+#drop.wavesurfer-dragover {
+  border-color: #333;
+}
+
+#waveform {
+  position: relative;
+}
+
+#progress-bar {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -10px;
+  left: 5%;
+  width: 90%;
+}
+
+#drop {
+  border: 3px dashed #ddd;
+  padding: 30px;
+}
+
+textarea.caption {
+  border-top: #eee 1px solid;
+  border-bottom: #eee 1px solid;
+  resize: none;
+  opacity: 0.6;
+  padding: 6px;
+}
+
+textarea.caption.active {
+  opacity: 1.0;
+  color: black;
+  background-color: #fdfbc8;
+  /* border-top: #333 1px solid;
+  border-bottom: #333 1px solid; */
+}
+
+.gray {
+  background-color: gray;
+}
+
+.dropzone.hollow-rect {
+  border: 2px dashed black;
+  height: 480px;
+  cursor: pointer;
+}
+
+.point-center-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+  text-align: center;
+}
+
+.my-player-dimensions {
+  max-width: 100%;
+  max-height: 480px;
+}
