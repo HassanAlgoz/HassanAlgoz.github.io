@@ -57,9 +57,9 @@ const app = new Vue({
         langB: "ar",
 
         zoom:     100,
-        zoomStep: 10,
+        zoomStep: 20,
         zoomMin:  20,
-        zoomMax:  200,
+        zoomMax:  400,
 
         errors:       [],
         isSaved:      true,
@@ -777,7 +777,7 @@ const app = new Vue({
         formatTime(t) {
             // return Number.parseInt(t.toFixed(0));
             return new Date(t * 1000).toISOString()
-                .substr(11, 8);
+                .substr(12, 7);
         },
 
     },

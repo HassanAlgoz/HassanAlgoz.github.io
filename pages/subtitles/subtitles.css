@@ -69,6 +69,29 @@ region.wavesurfer-region[data-region-highlight] {
   border-color: #333;
 }
 
+.wavesurfer-handle {
+  max-width: 100% !important;
+  min-width: 5% !important;
+}
+
+.wavesurfer-handle-end {
+  left: 95% !important;
+}
+
+.wavesurfer-handle-start {
+  left: 0 !important;
+}
+
+.wavesurfer-handle:hover {
+  cursor: ew-resize !important;
+}
+
+/* .wavesurfer-region:hover {
+  cursor: grab !important;
+} */
+
+
+
 #waveform {
   position: relative;
 }
