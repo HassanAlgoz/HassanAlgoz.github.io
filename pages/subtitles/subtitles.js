@@ -44,6 +44,7 @@ const app = new Vue({
         settings: {
             enableVideo:   true,
             selectedLang: "ar",
+            enableLangB:  true,
 
             // Auto Segmentation
             peaksLength:       512,
@@ -73,10 +74,10 @@ const app = new Vue({
         selectedRegion: null,
 
         shortcuts: [
-            { key: "End", desc: "forward" },
-            { key: "Home", desc: "backward" },
-            { key: "Page Down", desc: "next segment" },
-            { key: "Page Up", desc: "previous segment" },
+            { key: "F1", desc: "backward" },
+            { key: "F2", desc: "forward" },
+            { key: "F3", desc: "previous caption" },
+            { key: "F4", desc: "next caption" },
             { key: "Esc", desc: "play/pause" },
             // { key: 'shift+r', desc: 'repeat segment' },
             // { key: 'shift+m', desc: 'mute/unmute' },
@@ -153,25 +154,34 @@ const app = new Vue({
             this.shiftPressed = evt.shiftKey;
             this.ctrlPressed = evt.ctrlKey;
 
-            let keyMap = {
-                33: this.prevCaption, // Page-Up
-                34: this.nextCaption, // Page-Down
-                36: this.back, // Home
-                35: this.forth, // End
+            const keyMap = {
+
+                112: this.back, // F1
+                113: this.forth, // F2
+                // 36: this.back, // Home
+                // 35: this.forth, // End
+
+                114: this.prevCaption, // Page-Up
+                115: this.nextCaption, // Page-Down
+                // 33: this.prevCaption, // Page-Up
+                // 34: this.nextCaption, // Page-Down
+
                 27: this.togglePlay, // esc
                 // 77: this.toggleMute, // M
                 // 82: this.play, // R
                 // 46: this.remove, /* Delete */
             };
-            // let ctrlMap = {
+            // const ctrlMap = {
             //     83: this.save,
             // };
 
-            let disabledKeys = [
-                116, // F5
+            const disabledKeys = [
+                // F1 - F5
+                112, 113, 114, 115, 116,
+
                 9, // TAB
             ];
-            let ctrlDisabledKeys = [
+            const ctrlDisabledKeys = [
                 82, // R
             ];
 
@@ -371,6 +381,14 @@ const app = new Vue({
 
     methods: {
 
+        toggleLanguage(code) {
+            if (this.clip.languages.includes(code)) {
+                this.clip.languages.splice(this.clip.languages.indexOf(code), 1);
+                return;
+            }
+            this.clip.languages.push(code);
+        },
+
         mergeLeft() {
             if (!this.selectedRegion) return;
             let idx = this.clip.regions.findIndex(r => this.selectedRegion.id === r.id);
@@ -526,7 +544,7 @@ const app = new Vue({
 
         showContextMenu(region, evt) {
             document.getElementById("contextMenu").style.left = `${evt.pageX}px`;
-            document.getElementById("contextMenu").style.top = `${evt.pageY}px`;
+            document.getElementById("contextMenu").style.top = `${evt.pageY - document.getElementById("contextMenu").clientHeight}px`;
             document.getElementById("contextMenu").removeAttribute("hidden");
             this.menuVisible = true;
             this.selectedRegion = region;
@@ -537,7 +555,7 @@ const app = new Vue({
             // 1. Before
             this.isSaving = true;
             // 2. Save
-            this.applyLanguageRules();
+            // this.applyLanguageRules();
             storage.save("clip", this.clip.toJSON());
             // 3. After: successful save
             this.isSaving = false;
@@ -776,8 +794,10 @@ const app = new Vue({
     filters: {
         formatTime(t) {
             // return Number.parseInt(t.toFixed(0));
+            // return new Date(t * 1000).toISOString()
+            //     .substr(12, 7);
             return new Date(t * 1000).toISOString()
-                .substr(12, 7);
+                .substr(14, 5);
         },
 
     },
@@ -981,4 +1001,35 @@ function loadMediaFile(file) {
     app.mediaURL = objectURL;
     wavesurfer.load(app.mediaURL);
     app.clip.name = file.name;
+    if (file.type.startsWith("video")) {
+        renderPlayer();
+    } else {
+        const $player = document.getElementById("my-player");
+        $player.src = "";
+    }
+}
+
+function renderPlayer() {
+    const $player = document.getElementById("my-player");
+
+    // add listeners if first time adding a source
+    if (!$player.src) {
+        wavesurfer.on("seek", () => {
+            if (wavesurfer.getCurrentTime() >= wavesurfer.getDuration()) return;
+            $player.currentTime = wavesurfer.getCurrentTime();
+        });
+        wavesurfer.on("play", () => {
+            $player.currentTime = wavesurfer.getCurrentTime();
+            $player.play();
+        });
+        wavesurfer.on("pause", () => {
+            $player.pause();
+        });
+        $player.oncontextmenu = function(evt) {
+            evt.preventDefault();
+            return false;
+        };
+    }
+
+    $player.src = app.mediaURL;
 }
