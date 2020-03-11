@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Hassan Algoz's CV/Resume">
+<meta name="author" content="Hassan Algoz">
+
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+
+<!-- Prioritized CSS -->
+<style>
+body {
+    margin: 0;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 960px;
+	margin: 0 auto 30px;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+</style>
+
+<!-- Custom -->
+<link rel="stylesheet" href="/main.css">
+	<title>ANN LM</title>
+	<link rel="stylesheet" href="/pages/ann-lm/ann-lm.css">
+	<!-- SCRIPT -->
+	<script src="/pages/ann-lm/ann-lm.js"></script>
+</head>
+<body>
+	<nav>
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+        <li><a href="/">Résumé</a></li>
+        <li>
+            <a href="#">Demo Apps ￬</a>
+            <ul class="hidden">
+                <li><a href="/pages/subtitles/subtitles.html">Subtitles Editor</a></li>
+                <!-- <li><a href="/pages/editor/editor.html">Markdown Editor</a></li> -->
+                <li><a href="/pages/dict/dict.html">Dictionary</a></li>
+            </ul>
+        </li>
+        <li><a href="/pages/tutorials/tutorials.html">Tutorials</a></li>
+    </ul>
+</nav>
+
+	<div class="wrapper">
+		<main>
+            <h1>Artificial Neural Network Based Language Model</h1>
+            <p>The model can be trained on stories, books, articles, and the like, to learn to produce similar text. After training, the model can be given a sequence of words as its input to predict the next word. So, if the model is trained on stories, for example, you can ask the model to complete an incomplete story.</p>
+            <br/>
+            <p>This picture illustrates predicting a word given 5 context words. However, the model generalizes the meaning of the context and target words, so it doesn't learn relationships between individual words, rather, the relationship between a higher representation of these words encoded as a vector of real numbers. The mapping from individual words to a vector is done through unsupervised learning of really big data of text, resulting in word embeddings. We chose GRU  (an improved version of LSTM).</p>
+            <div>
+                <img src="/assets/img/softmax-nplm.png" alt="">
+            </div>
+            <br/>
+            <h2>Demo</h2>
+            <p>We implemented a game (in-browser) that relies on the text generation capability of the model. The game first asks the user to input few words of a story, and the output of the model is a generated paragraph based on user's input. The user is then required to retype the generated paragraph for practice. At the end, detailed results of the practice session are displayed.</p>
+            <p><a href="https://youtu.be/M3gbcqPIKi0">Video Demo</a></p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/M3gbcqPIKi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <br/>
+
+            <p>The code is available at <a href="https://github.com/HassanAlgoz/text-generation">my GitHub repo</a>.</p>
+            <br/>
+            <h2>Acknowledgement</h2>
+            <p>This work was part of our senior project in 2018 at KFUPM. Thanks to my colleagues Saleh Alresaini and Faris Alasmari, and also to our supervisor Dr. Lahouari Ghouti, for this great learning experience.</p>
+            
+        </main>
+	</div>
+</body>
+</html>
+                

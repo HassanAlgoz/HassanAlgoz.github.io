@@ -17,14 +17,22 @@ button:hover {
     cursor: pointer;
 }
 
-.about {
-    max-width: 460px;
+/* .about {
+    max-width: 560px;
     padding: 8px 16px;
     margin-bottom: 16px;
-}
+} */
 
 .card {
     box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+ul.icon-list li {
+    list-style-type: none;
+}
+
+ul.icon-list li a {
+    vertical-align: middle;
 }
 
 /* Grid styles -------------------------------------------------*/
@@ -77,8 +85,8 @@ nav ul {
 }
 /*Create a horizontal list with spacing*/
 nav li {
-    display:inline-block;
-    float: right;
+    /* display: inline-block; */
+    float: left;
     margin-left: 1px;
 }
 /*Style for menu links*/

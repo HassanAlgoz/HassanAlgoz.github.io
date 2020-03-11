@@ -46,12 +46,12 @@ h6 {
 
 <!-- Custom -->
 <link rel="stylesheet" href="/main.css">
-	<title>تمارين</title>
-	<link rel="stylesheet" href="/pages/exercises/exercises.css">
+	<title>Tutorials</title>
+	<link rel="stylesheet" href="/pages/tutorials/tutorials.css">
 	<!-- SCRIPT -->
-	<script src="/pages/exercises/exercises.js" type="module"></script>
+	<script src="/pages/tutorials/tutorials.js"></script>
 </head>
-<body dir="rtl">
+<body>
 	<nav>
     <label for="show-menu" class="show-menu">Show Menu</label>
     <input type="checkbox" id="show-menu" role="button">
@@ -71,16 +71,23 @@ h6 {
 
 	<div class="wrapper">
 		<main>
-			<h1 id="title">تمارين</h1>
-			<!-- <ul id="subtitle">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-            </ul> -->
-            <article id="questions">
+            <div>
+                <h1>Tutorials</h1>
+                <button class="active" onclick="selectFilter(this)" value="all" id="btnFilterAll">All</button>
+                <button class="" onclick="selectFilter(this)" value="courses" id="btnFilterCourses"><i class="fa fa-diamond w3-margin-right"></i> Courses</button>
+                <button class="" onclick="selectFilter(this)" value="maps" id="btnFilterMaps"><i class="fa fa-photo w3-margin-right"></i> Mind Maps</button>
+                <!-- <button class="" onclick="selectFilter(this)" value="posts" id="btnFilterPosts"><i class="fa fa-pencil w3-margin-right"></i> كتابات</button> -->
+            </div>
+            <hr/>
+            <section class="grid" id="content" dir="rtl">
                 <!-- Dynamically Rendered -->
-            </article>
-		</main>
+            </section>
+        </main>
+
+        <!-- Pagination -->
+        <div class="center" dir="rtl">
+            <button class="" onclick="more()" id="btnMore">المزيد</button>
+        </div>
 		<!-- Footer -->
 		<footer class="center">
     <p id="copyright">
@@ -90,3 +97,4 @@ h6 {
 	</div>
 </body>
 </html>
+                

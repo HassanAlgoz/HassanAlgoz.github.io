@@ -1,134 +1,167 @@
-@import url('http://fonts.googleapis.com/earlyaccess/droidarabickufi.css');
 
-/* @font-face {
-    font-family: 'Droid Arabic Naskh';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/DroidArabicNaskh/DroidNaskh-Regular.ttf) format('truetype')
+/* for showing debug messages in HTML */
+.debug {
+    display: none;
+}
+
+
+input[type="range"] {
+    cursor: ew-resize;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Context Menu */
+#contextMenu {
+    width: 256px;
+    box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: block;
+    z-index: 99;
+    background-color: white;
+}
+
+#contextMenu .menu-options {
+    list-style: none;
+    padding: 10px 0;
+}
+
+#contextMenu .menu-options .menu-option {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 40px 10px 20px;
+    cursor: pointer;
+}
+
+#contextMenu .menu-options .menu-option:hover {
+    background: #f8f9fa;
+}
+
+tr.selected {
+    color: white;
+    background-color: #28a745 !important;
+}
+
+region.wavesurfer-region:before {
+    content: attr(data-region-label);
+    color: black;
+    font-weight: bold;
+}
+
+region {
+  z-index: 3 !important;
+}
+
+region.wavesurfer-region[data-region-highlight] {
+  border: 1px solid rgb(86, 180, 239);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px rgba(82, 168, 236, 0.6);
+}
+
+#drop.wavesurfer-dragover {
+  border-color: #333;
+}
+
+.wavesurfer-handle {
+  max-width: 100% !important;
+  min-width: 5% !important;
+}
+
+.wavesurfer-handle-end {
+  left: 95% !important;
+}
+
+.wavesurfer-handle-start {
+  left: 0 !important;
+}
+
+.wavesurfer-handle:hover {
+  cursor: ew-resize !important;
+}
+
+/* .wavesurfer-region:hover {
+  cursor: grab !important;
 } */
-/* font-family: 'Droid Arabic Naskh',Helvetica,Arial,sans-serif; */
 
-html,
-body,
-#app {
-	height: 100%;
-	min-height: 100%;
-	margin: 0;
-    padding: 0;
+
+
+#waveform {
+  position: relative;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 30px;
-    grid-template-rows: 26px 1fr 1fr 26px;
-    grid-template-areas: 
-    "topBar topBar topBar"
-    "preview code lineNumbers"
-    "preview code lineNumbers"
-    "bottomBar bottomBar bottomBar"
-	;
-    grid-gap: 0px;
+#progress-bar {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -10px;
+  left: 5%;
+  width: 90%;
 }
 
-#topBar {
-	grid-area: topBar;
-	background-color: rgb(37, 37, 38);
-	color: #f8f8f8;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: "topBar-left topBar-right";
-	/* grid-gap: 10px; */
-}
-#topBar-left {
-	grid-area: topBar-left;
-	direction: rtl;
-}
-#topBar-right {
-	grid-area: topBar-right;
-	direction: rtl;
-	text-align: center;
-}
-#topBar-right button {
-	font-family: 'Droid Arabic Kufi', monospace;
-	padding: 4px 8px;
-	font-size: 12px;
-	margin: 0;
-	max-height: 100%;
-	border: none;
-}
-#topBar-right button:hover {
-	background-color: #19c589; 
+#drop {
+  border: 3px dashed #ddd;
+  padding: 30px;
 }
 
-#code {
-	grid-area: code;
-	direction: rtl;
-	font: 14px 'Droid Arabic Kufi', monospace;
-	line-height: 26px;
-	vertical-align: middle;
-	background-color: #131314;
-	vertical-align: baseline;
-	color: #F8F8F0;
-	outline: none;
-	resize: none;
-	border: none;
-}
-#code:focus {
-	border: none;
+textarea.caption {
+  /* border-top: #eee 1px solid; */
+  /* border-bottom: #eee 1px solid; */
+  resize: none;
+  padding: 0 6px;
+  opacity: 0.725;
 }
 
-#lineNumbers {
-	grid-area: lineNumbers;
-	direction: rtl;
-	font: 14px 'Droid Arabic Kufi', monospace;
-	line-height: 26px;
-	vertical-align: text-bottom;
-	background-color: #131314;
-	vertical-align: baseline;
-	text-align: center;
-	color: #868686;
-	overflow: hidden;
-	outline: none;
-	resize: none;
-	border: none;
+textarea.caption.active {
+  opacity: 1.0;
+  color: black;
+  background-color: #fdfbc8;
+  /* border-top: #333 1px solid;
+  border-bottom: #333 1px solid; */
 }
 
-#preview {
-	grid-area: preview;
-	background-color: rgb(248, 244, 207);
-	color: black;
-	direction: rtl;
-	overflow-y: auto;
-	font-size: 14px;
-	font-family: 'Droid Arabic Kufi', monospace;
-	padding: 14px;
-}
-#bottomBar {
-	grid-area: bottomBar;
-	background-color: rgb(0, 122, 204);
-	color: #F8F8F0;
-	font-size: 12px;
-	font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'sans-serif';
+.caption-time.active {
+  font-weight: bold;
 }
 
-pre {
-	direction: ltr;
-	background-color: #131314;
-	color: #F8F8F0;
-	padding: 16px;
+.gray {
+  background-color: gray;
 }
 
-/* @media screen and (min-width: 736px)
-{
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 500px 500px 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-        ". title title ."
-        ". header header ."
-        ". sidebar content ."
-        ". footer footer ."
-        ;
-    }
-} */
+.dropzone.hollow-rect {
+  border: 2px dashed black;
+  height: 480px;
+  cursor: pointer;
+}
+
+.point-center-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+  text-align: center;
+}
+
+.my-player-dimensions {
+  max-width: 100%;
+  max-height: 480px;
+}
+
+#my-player {
+  max-width: 100%;
+  /* max-height: 480px; */
+}
+
+.form-check.right {
+  padding-left: 0;
+  padding-right: 1.25rem;
+}
+
+.form-check-input.right {
+  
+}
