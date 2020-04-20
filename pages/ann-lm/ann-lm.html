@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Hassan Algoz's CV/Resume">
+<meta name="description" content="موقع حسان القوز حيث يجمع فيه الدورات والمشاريع.">
 <meta name="author" content="Hassan Algoz">
 
 <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -16,7 +16,8 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
+    /* font-family: 'Consolas', 'Courier New', Courier, monospace; */
 }
 
 p,
@@ -46,26 +47,33 @@ h6 {
 
 <!-- Custom -->
 <link rel="stylesheet" href="/main.css">
-	<title>ANN LM</title>
+	<title>Artificial Neural Network Based Language Model</title>
 	<link rel="stylesheet" href="/pages/ann-lm/ann-lm.css">
 	<!-- SCRIPT -->
 	<script src="/pages/ann-lm/ann-lm.js"></script>
 </head>
 <body>
-	<nav>
-    <label for="show-menu" class="show-menu">Show Menu</label>
+	<nav dir="rtl">
+    <label for="show-menu" class="show-menu">إظهار القائمة</label>
     <input type="checkbox" id="show-menu" role="button">
     <ul id="menu">
-        <li><a href="/">Résumé</a></li>
+        <li><a href="/pages/study/study.html">مصادر للطالب</a></li>
         <li>
-            <a href="#">Demo Apps ￬</a>
+            <a href="#">تعلم الآلة ￬</a>
             <ul class="hidden">
-                <li><a href="/pages/subtitles/subtitles.html">Subtitles Editor</a></li>
-                <!-- <li><a href="/pages/editor/editor.html">Markdown Editor</a></li> -->
-                <li><a href="/pages/dict/dict.html">Dictionary</a></li>
+                <li><a href="/pages/hand-signs/hand-signs.html">رؤية الحاسب</a></li>
+                <li><a href="/pages/ann-lm/ann-lm.html">نمذجة اللغة</a></li>
             </ul>
         </li>
-        <li><a href="/pages/tutorials/tutorials.html">Tutorials</a></li>
+        <li>
+            <a href="#">تطبيقات ￬</a>
+            <ul class="hidden">
+                <li><a href="/pages/subtitles/subtitles.html">أداة الترجمة</a></li>
+                <li><a href="/pages/editor/editor.html">مُحرر Markdown</a></li>
+                <li><a href="/pages/dict/dict.html">قاموس المصطلحات</a></li>
+            </ul>
+        </li>
+        <li><a href="/">الرئيسية</a></li>
     </ul>
 </nav>
 
@@ -88,9 +96,21 @@ h6 {
 
             <p>The code is available at <a href="https://github.com/HassanAlgoz/text-generation">my GitHub repo</a>.</p>
             <br/>
+
+            <h2>Summary</h2>
+            <ul>
+				<li>The model can predict words based on context words</li>
+				<li>Conducted literature review</li>
+				<li>Built word-based meaning encoding layer (word embeddings)</li>
+				<li>Built a recurrent neural network model for sequential data (text)</li>
+				<li>Trained the model on Arabic texts</li>
+				<li>Deployed and integrated with an in-browser typing practice game</li>
+				<li>Documented the work during and after the phases</li>
+				<li>Completed in 3 months in 2018 with limited resources</li>
+			</ul>
+
             <h2>Acknowledgement</h2>
             <p>This work was part of our senior project in 2018 at KFUPM. Thanks to my colleagues Saleh Alresaini and Faris Alasmari, and also to our supervisor Dr. Lahouari Ghouti, for this great learning experience.</p>
-            
         </main>
 	</div>
 </body>

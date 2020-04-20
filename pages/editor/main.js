@@ -151,7 +151,7 @@ document.addEventListener("keydown", (evt) => {
     app.capsLock = evt.getModifierState("CapsLock");
 
     // Ctrl + S: Saves (and downloads) markdown in ".md" format
-    if (evt.keyCode == KEYS.S && (evt.ctrlKey || evt.metaKey)) {
+    if (evt.keyCode === KEYS.S && (evt.ctrlKey || evt.metaKey)) {
         evt.preventDefault();
         app.saveText();
         return false;

@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Hassan Algoz's CV/Resume">
+<meta name="description" content="موقع حسان القوز حيث يجمع فيه الدورات والمشاريع.">
 <meta name="author" content="Hassan Algoz">
 
 <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
@@ -16,7 +16,8 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
+    /* font-family: 'Consolas', 'Courier New', Courier, monospace; */
 }
 
 p,
@@ -52,20 +53,27 @@ h6 {
 	<script src="/pages/hand-signs/hand-signs.js"></script>
 </head>
 <body>
-	<nav>
-    <label for="show-menu" class="show-menu">Show Menu</label>
+	<nav dir="rtl">
+    <label for="show-menu" class="show-menu">إظهار القائمة</label>
     <input type="checkbox" id="show-menu" role="button">
     <ul id="menu">
-        <li><a href="/">Résumé</a></li>
+        <li><a href="/pages/study/study.html">مصادر للطالب</a></li>
         <li>
-            <a href="#">Demo Apps ￬</a>
+            <a href="#">تعلم الآلة ￬</a>
             <ul class="hidden">
-                <li><a href="/pages/subtitles/subtitles.html">Subtitles Editor</a></li>
-                <!-- <li><a href="/pages/editor/editor.html">Markdown Editor</a></li> -->
-                <li><a href="/pages/dict/dict.html">Dictionary</a></li>
+                <li><a href="/pages/hand-signs/hand-signs.html">رؤية الحاسب</a></li>
+                <li><a href="/pages/ann-lm/ann-lm.html">نمذجة اللغة</a></li>
             </ul>
         </li>
-        <li><a href="/pages/tutorials/tutorials.html">Tutorials</a></li>
+        <li>
+            <a href="#">تطبيقات ￬</a>
+            <ul class="hidden">
+                <li><a href="/pages/subtitles/subtitles.html">أداة الترجمة</a></li>
+                <li><a href="/pages/editor/editor.html">مُحرر Markdown</a></li>
+                <li><a href="/pages/dict/dict.html">قاموس المصطلحات</a></li>
+            </ul>
+        </li>
+        <li><a href="/">الرئيسية</a></li>
     </ul>
 </nav>
 
@@ -148,6 +156,16 @@ h6 {
                 <li>We could use a different neural network architecture</li>
             </ul>
 
+            <h2>Summary</h2>
+            <ul>
+				<li>Deep end-to-end approach</li>
+				<li>Trained a CNN to recognize hand signs (numbers 0 – 9)</li>
+				<li>A public dataset of 2,062 images + augmentation</li>
+				<li>Used transfer learning from a VGG16 model</li>
+				<li>Real-time prediction using input video stream and camera with OpenCV</li>
+				<li>Trained on my “Radeon RX 560” GPU using Intel’s <a href="//github.com/plaidml/plaidml">plaidML</a></li>
+				<li>Completed in 1 month in 2019 with limited resources</li>
+			</ul>
         </main>
 	</div>
 </body>
