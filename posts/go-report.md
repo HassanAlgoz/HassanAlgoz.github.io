@@ -17,7 +17,7 @@ lang = en
 - [Web Framework Benchmarks – TechEmpower](#web-framework-benchmarks--techempower)
 - [BenchmarksGame](#benchmarksgame)
 - [Where Node.js Stands](#where-nodejs-stands)
-- [Go is Replacing C++ and Java at Google](#go-is-replacing-c-and-java-at-google)
+- [Go at Google](#go-at-google)
 - [Conclusion](#conclusion)
 
 
@@ -133,10 +133,10 @@ You may also want to watch [Things I Regret About Node.js – Ryan Dahl – JSCo
 
 Enough said about Node.js.
 
-# Go is Replacing C++ and Java at Google
+# Go at Google
 
 [Robert Love](https://www.quora.com/How-is-Go-used-at-Google-What-could-be-areas-specific-systems-applications-in-which-Go-could-replace-other-languages-used-nowadays-inside-Google-and-why-would-it-make-sense-to-introduce-Go-in-place-of-another-language) who works at Google says:
-> “Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, `it replaces C++ and Java in Google` (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”.
+> “Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, `it replaces C++ and Java in Google` (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”
 
 [The Go Team](https://golang.org/doc/faq#creating_a_new_language) says:
 > “Go was born out of frustration with existing languages and environments for the work we were doing at Google”. “… Programming had become too difficult and the choice of languages was partly to blame. One had to choose either efficient compilation, efficient execution, or ease of programming; all three were not available in the same mainstream language. Programmers who could were choosing ease over safety and efficiency by moving to dynamically typed languages such as Python and JavaScript rather than C++ or, to a lesser extent, Java”.
@@ -144,6 +144,8 @@ Enough said about Node.js.
 Also, see [Rewriting a large production system in Go](http://matt-welsh.blogspot.com/2013/08/rewriting-large-production-system-in-go.html) – By **Matt Welsh**, 2013, in which the prior language used was C++.
 
 # Conclusion
-There are other factors to look at in comparing languages, but I hope this helps. I think, just like Java is for Android, JavaScript belongs in the browser, and Python made its name in Data Science, likewise, Go established itself on the server-side and the cloud, and as a modern general purpose programming language.
+There is a lot to be said about Go itself, maybe that would be a topic for another post. I think Go established itself on the server-side and the cloud, and as a modern general purpose programming language. You should definitely take a look at it.
 
-Read more: [Why Go?](https://github.com/golang/go/wiki/WhyGo)
+Read more:
+- [Why Go?](https://github.com/golang/go/wiki/WhyGo)
+- [Go at Google: Language Design in the Service of Software Engineering](https://talks.golang.org/2012/splash.article)
