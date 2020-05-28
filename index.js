@@ -67,16 +67,19 @@ function render() {
     // Render Posts
     (() => {
         el.postsListView.innerHTML = `
-            <ul class="post list">
+            <div class="posts-list">
                 ${model.posts
             .filter((v, idx, array) => idx >= model.offset && idx < Math.min(model.offset + model.limit, array.length))
             .map(c => `
-                    <li class="post item">
-                        <a class="no-underline" href="${c.link}">${c.date} — ${c.title}</a>
-                        ${c.desc? `<p>${c.desc}</p>`: ""}
-                    </li>
+                ${c.dir === "ltr"
+            ? "<div class=\"\" dir=\"ltr\">"
+            : "<div class=\"\" dir=\"rtl\">"}
+                        <a href="${c.link}"><small>(${c.date})</small> — ${c.title}</a>
+                        <br>
+                        ${c.desc? `<small>${c.desc}</small>`: ""}
+                    </div>
                 `).join("")}
-            </ul>
+            </div>
         `;
     })();
 

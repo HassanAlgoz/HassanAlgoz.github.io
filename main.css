@@ -1,5 +1,16 @@
 @import "pages/parts/nav.css";
 
+[dir=rtl] {
+    font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
+    /* font-family: 'Consolas', 'Courier New', Courier, monospace; */
+}
+
+[dir=ltr] {
+    font-family: 'lucida grande', verdana, tahoma, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .no-underline {
     text-decoration: none;
 }
@@ -71,4 +82,20 @@ article h3 {
 
 .text-muted {
     color: gray;
+}
+
+.posts-list {
+    text-align: center;
+}
+
+.posts-list div {
+    margin-bottom: 14px;
+}
+
+.posts-list :last-child {
+    margin-bottom: initial;
+}
+
+img {
+    max-width: 100%;
 }
