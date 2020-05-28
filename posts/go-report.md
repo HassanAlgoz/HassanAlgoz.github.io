@@ -6,8 +6,6 @@ lang = en
 ---
 # Why You Should Consider Go? <!-- omit in toc -->
 
-**Note**: This post was originally written in 2018.
-
 # Content <!-- omit in toc -->
 - [Introduction](#introduction)
 - [Where PHP Stands](#where-php-stands)
