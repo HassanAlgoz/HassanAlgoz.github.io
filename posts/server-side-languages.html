@@ -1,70 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="موقع حسان القوز حيث يجمع فيه الدورات والمشاريع.">
-<meta name="author" content="Hassan Algoz">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+  name="description"
+  content="موقع حسان القوز حيث يجمع فيه الدورات والمشاريع."
+/>
+<meta name="author" content="Hassan Algoz" />
 
-<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="//fonts.googleapis.com/earlyaccess/droidarabickufi.css" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<link
+  href="//fonts.googleapis.com/earlyaccess/droidarabickufi.css"
+  rel="stylesheet"
+/>
 
 <!-- Prioritized CSS -->
 <style>
-body {
+  body {
     margin: 0;
-}
+  }
 
-.wrapper {
+  .wrapper {
     max-width: 960px;
-	margin: 0 auto 30px;
-}
+    margin: 0 auto 30px;
+    padding: 20px 24px;
+  }
 
-.center {
+  .center {
     margin: 0 auto;
     text-align: center;
-}
+  }
 
-.hide {
+  .hide {
     display: none;
-}
+  }
 </style>
 
 <!-- Custom -->
-<link rel="stylesheet" href="/main.css">
-    <title>Why You Should Consider Go? - 2020-05-25</title>
+<link rel="stylesheet" href="/main.css" />
+
+    <title>Comparing Server-side Languages - 2020-05-25</title>
     <link rel="stylesheet" href="/posts/layout.css">
 </head>
 <body>
     <nav dir="rtl">
-    <label for="show-menu" class="show-menu">إظهار القائمة</label>
-    <input type="checkbox" id="show-menu" role="button">
-    <ul id="menu">
-        <li><a href="/pages/study/study.html">مصادر للطالب</a></li>
+  <label for="show-menu" class="show-menu">إظهار القائمة</label>
+  <input type="checkbox" id="show-menu" role="button" />
+  <ul id="menu">
+    <li><a href="/pages/study/study.html">مصادر للطالب</a></li>
+    <li>
+      <a href="#">تعلم الآلة ￬</a>
+      <ul class="hidden">
+        <li><a href="/pages/hand-signs/hand-signs.html">رؤية الحاسب</a></li>
+        <li><a href="/pages/ann-lm/ann-lm.html">نمذجة اللغة</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">تطبيقات ￬</a>
+      <ul class="hidden">
         <li>
-            <a href="#">تعلم الآلة ￬</a>
-            <ul class="hidden">
-                <li><a href="/pages/hand-signs/hand-signs.html">رؤية الحاسب</a></li>
-                <li><a href="/pages/ann-lm/ann-lm.html">نمذجة اللغة</a></li>
-            </ul>
+          <a href="/pages/subtitles/subtitles.html">برنامج التفريغ والترجمة</a>
         </li>
-        <li>
-            <a href="#">تطبيقات ￬</a>
-            <ul class="hidden">
-                <li><a href="/pages/subtitles/subtitles.html">أداة الترجمة</a></li>
-                <li><a href="/pages/editor/editor.html">مُحرر Markdown</a></li>
-                <li><a href="/pages/dict/dict.html">قاموس المصطلحات</a></li>
-            </ul>
-        </li>
-        <li><a href="/">الرئيسية</a></li>
-    </ul>
+        <li><a href="/pages/editor/editor.html">مُحرر Markdown</a></li>
+        <li><a href="/pages/dict/dict.html">قاموس المصطلحات</a></li>
+      </ul>
+    </li>
+    <li><a href="/">الرئيسية</a></li>
+  </ul>
 </nav>
 
     <div class="wrapper" dir="ltr">
-        <h1 id="whyyoushouldconsidergoomitintoc">Why You Should Consider Go? <!-- omit in toc --></h1>
+        <h1 id="comparingserversidelanguagesomitintoc">Comparing Server-side Languages <!-- omit in toc --></h1>
+<p>Comparing Go, PHP, Java, Python, and Node.js.</p>
 <h1 id="contentomitintoc">Content <!-- omit in toc --></h1>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
@@ -81,14 +95,12 @@ body {
 <li><a href="#conclusion">Conclusion</a></li>
 </ul>
 <h1 id="introduction">Introduction</h1>
-<p>Decisions on what technology stack to use is always a trade-off that factors mainly 4 things:</p>
+<p>When choosing a tech stack or a programming language, we often factor in two things:</p>
 <ol>
-<li>Skillset of the available developers</li>
-<li>Cost of development</li>
-<li>Time required</li>
-<li>Amount of dependence on technologies (code already written, available libraries, …etc.)</li>
+<li>Estimated cost</li>
+<li>Estimated time</li>
 </ol>
-<p>Most often, performance is neglected. Leading to long-term costs. Sure you "get things done" faster and cheaper, but you'll pay for it later, hiring more to fix bugful code and handle bottle necks, just to hit the limits of the framework/language. Hopefully, you realize it.</p>
+<p>Most often, performance is neglected. Leading to long-term costs. Sure you "get things done" faster and cheaper, but you'll pay for it later, hiring more to fix bugful code and handle bottle necks, just to hit the limits of the framework/language. Hopefully, you find out.</p>
 <p>There are many aspects of programming that must be considered when deciding the best programming language for the job. Some metrics can be measured with numbers, while others are too complex to summarize with few numbers, hence, human intuition and experience are paramount.</p>
 <p>We will look at the following <strong>numbers</strong>:</p>
 <ul>
@@ -179,7 +191,7 @@ body {
 <h1 id="goatgoogle">Go at Google</h1>
 <p><a href="https://www.quora.com/How-is-Go-used-at-Google-What-could-be-areas-specific-systems-applications-in-which-Go-could-replace-other-languages-used-nowadays-inside-Google-and-why-would-it-make-sense-to-introduce-Go-in-place-of-another-language">Robert Love</a> who works at Google says:</p>
 <blockquote>
-  <p>“Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, <code>it replaces C++ and Java in Google</code> (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”</p>
+  <p>“Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, it replaces C++ and Java in Google (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”</p>
 </blockquote>
 <p><a href="https://golang.org/doc/faq#creating_a_new_language">The Go Team</a> says:</p>
 <blockquote>

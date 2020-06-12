@@ -1,10 +1,11 @@
-title = Why You Should Consider Go?
-desc = Comparing Go with PHP, Python, Java and Node.js on the server-side
+title = Comparing Server-side Languages
+desc = Comparing Go, PHP, Java, Python, and Node.js
 date = 2020-05-25
 dir = ltr
 lang = en
 ---
-# Why You Should Consider Go? <!-- omit in toc -->
+# Comparing Server-side Languages <!-- omit in toc -->
+Comparing Go, PHP, Java, Python, and Node.js.
 
 # Content <!-- omit in toc -->
 - [Introduction](#introduction)
@@ -22,16 +23,12 @@ lang = en
 
 
 # Introduction
-Decisions on what technology stack to use is always a trade-off that factors mainly 4 things:
+When choosing a tech stack or a programming language, we often factor in two things:
 
+1. Estimated cost
+2. Estimated time
 
-1. Skillset of the available developers
-2. Cost of development
-3. Time required
-4. Amount of dependence on technologies (code already written, available libraries, …etc.)
-
-
-Most often, performance is neglected. Leading to long-term costs. Sure you "get things done" faster and cheaper, but you'll pay for it later, hiring more to fix bugful code and handle bottle necks, just to hit the limits of the framework/language. Hopefully, you realize it.
+Most often, performance is neglected. Leading to long-term costs. Sure you "get things done" faster and cheaper, but you'll pay for it later, hiring more to fix bugful code and handle bottle necks, just to hit the limits of the framework/language. Hopefully, you find out.
 
 There are many aspects of programming that must be considered when deciding the best programming language for the job. Some metrics can be measured with numbers, while others are too complex to summarize with few numbers, hence, human intuition and experience are paramount.
 
@@ -136,7 +133,7 @@ Enough said about Node.js.
 # Go at Google
 
 [Robert Love](https://www.quora.com/How-is-Go-used-at-Google-What-could-be-areas-specific-systems-applications-in-which-Go-could-replace-other-languages-used-nowadays-inside-Google-and-why-would-it-make-sense-to-introduce-Go-in-place-of-another-language) who works at Google says:
-> “Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, `it replaces C++ and Java in Google` (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”
+> “Go is designed specifically as a systems programming language for large, distributed systems and highly-scalable network servers. In that vein, it replaces C++ and Java in Google (company)'s software stack. Many teams are looking at building new servers in Go; some are even considering migrating existing codebases. Some of the Google technology you use every day has components written in Go.”
 
 [The Go Team](https://golang.org/doc/faq#creating_a_new_language) says:
 > “Go was born out of frustration with existing languages and environments for the work we were doing at Google”. “… Programming had become too difficult and the choice of languages was partly to blame. One had to choose either efficient compilation, efficient execution, or ease of programming; all three were not available in the same mainstream language. Programmers who could were choosing ease over safety and efficiency by moving to dynamically typed languages such as Python and JavaScript rather than C++ or, to a lesser extent, Java”.
