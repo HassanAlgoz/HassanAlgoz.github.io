@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin-bottom: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color:#f5f5f5;
+}
+
+td:nth-child(1) {
+    font-weight: bold;
+}
+
+#dataTable {
+    border-bottom: none;
+}
+
+#tableBody td {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+tr.total td {
+    font-weight: bold;
+    border-bottom: none;
+}
+
+tr th.total {
+    text-align: center;
+}
+
+div > input,
+div > select {
+    margin-bottom: 8px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    cursor: pointer;
+}
+
+input:invalid {
+    background-color: rgb(252, 190, 190);
+}
+
+/* ~ is the general sibling selector */
+/* + is the adjacent sibling selector */
+input ~ .input-error, 
+input ~ .input-success {
+    display: none;
+}
+
+input:invalid ~ .input-error {
+    color: red;
+    display: initial;
+    font-size: 0.7em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input:valid ~ .input-success {
+    color: yellowgreen;
+    display: initial;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.3em;
+    min-width: 40px;
+}
+
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+ul.styless { list-style: none; }
+
+.error {
+    padding: 8px;
+    color: red;
+    background-color: rgb(255, 240, 240);
+    font-family: 'Consolas', 'Courier New', 'Courier', monospace;
+    font-size: 13px;
+    border-bottom: 1px rgb(252, 205, 205) solid;
+}
+
+button.btn {
+    line-height: 1.45em;
+    border: none;
+    padding: 4px 10px;
+    font-weight: bold;
+    background-color: #dedeee;
+    /* color: #fff;
+    background-color: black; */
+}
+
+button.remove {
+    border: none;
+    background: none;
+    color: red;
+    font-size: 18px;
+}
+
+
+/* === Print Styles === */
+
+.print-only {
+    display: none;
+}
+
+@media print {
+    body {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .print-not {
+        display: none;
+    }
+
+    .print-only {
+        display: initial;
+    }
+
+    tr th.total {
+        text-align: right;
+    }
+}
+/* END Print Styles */

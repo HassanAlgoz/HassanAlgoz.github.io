@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+    <% include src/pages/parts/_head.ejs %>
+    <title><%= title %> - <%= date %></title>
+    <link rel="stylesheet" href="/posts/layout.css">
+</head>
+<body>
+    <% include src/pages/parts/_nav.ejs %>
+    <div class="wrapper" dir="<%= dir %>">
+        <%- body %>
+    </div>
+    <% include src/pages/parts/_footer.ejs %>
+</body>
+</html>

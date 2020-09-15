@@ -46,7 +46,10 @@
 <!-- Custom -->
 <link rel="stylesheet" href="/main.css" />
 
-	<title>حسان القوز</title>
+	<title>تمارين</title>
+	<link rel="stylesheet" href="/pages/exercises/exercises.css">
+	<!-- SCRIPT -->
+	<script src="/pages/exercises/exercises.js" type="module"></script>
 </head>
 <body dir="rtl">
 	<nav dir="rtl">
@@ -75,54 +78,24 @@
   </ul>
 </nav>
 
-	<main class="wrapper">
-
-		<section class="about">
-			<header class="about card">
-				<h1>حسان القوز</h1>
-				<p>مهتم بعلوم الحاسب والمعلومات ونشر العلم</p>
-				<div>
-					<a href="//youtube.com/channel/UCaD5hX1OzVezzbIqHm3VHsQ"><img src="/assets/img/YouTube.png" width="32" height="32" alt="Youtube"></a>
-					<a href="//github.com/hassanalgoz"><img src="/assets/img/Github.png" width="32" height="32" alt="Github"></a>
-					<a href="//twitter.com/Hassan_Algoz"><img src="/assets/img/Twitter.png" width="32" height="32" alt="Twitter"></a>
-					<a href="//www.linkedin.com/in/hassan-algoz-77431118"><img src="/assets/img/Linkedin.png" width="32" height="32" alt="Linkedin"></a>
-				</div>
-			</header>
-		</section>
-
-		<!-- HIDDEN! -->
-		<section class="posts">
-			<div>
-				<h1>مقالات</h1>
-			</div>
-			<div id="postsListView">
-				<!-- Dynamically Rendered List -->
-			</div>
-		</section>
-
-		<section class="tutorials" id="tutorials">
-			<div>
-				<h1>دروس</h1>
-				<button class="active" onclick="selectFilter(this)" value="all" id="btnFilterAll">الكل</button>
-				<button class="" onclick="selectFilter(this)" value="courses" id="btnFilterCourses"><i class="fa fa-diamond w3-margin-right"></i> الدورات</button>
-				<button class="" onclick="selectFilter(this)" value="maps" id="btnFilterMaps"><i class="fa fa-photo w3-margin-right"></i> الخرائط الذهنية</button>
-				<!-- <button class="" onclick="selectFilter(this)" value="posts" id="btnFilterPosts"><i class="fa fa-pencil w3-margin-right"></i> كتابات</button> -->
-			</div>
-	
-			<hr/>
-			<div class="grid" id="tutorialsListView">
-				<!-- Dynamically Rendered Grid Content -->
-			</div>
-
-			<!-- Pagination -->
-			<div class="center">
-				<button class="" onclick="handleMoreButton()" id="btnMore">المزيد</button>
-			</div>
-
-		</section>
-
-	</main>
-	<!-- SCRIPT -->
-	<script src="/index.js"></script>
+	<div class="wrapper">
+		<main>
+			<h1 id="title">تمارين</h1>
+			<!-- <ul id="subtitle">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul> -->
+            <article id="questions">
+                <!-- Dynamically Rendered -->
+            </article>
+		</main>
+		<!-- Footer -->
+		<footer class="center">
+    <p id="copyright">
+        الحقوق محفوظة - حسان القوز 2020 ©
+    </p>
+</footer>
+	</div>
 </body>
 </html>
