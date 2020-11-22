@@ -1,4 +1,4 @@
-@import "pages/parts/nav.css";
+@import "/parts/nav.css";
 
 [dir=rtl] {
     font-family: 'Droid Arabic Kufi', 'lucida grande', verdana, tahoma, arial, sans-serif;
@@ -9,6 +9,10 @@
     font-family: 'lucida grande', verdana, tahoma, arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
 }
 
 .no-underline {
@@ -85,7 +89,7 @@ article h3 {
 }
 
 .posts-list {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .posts-list div {

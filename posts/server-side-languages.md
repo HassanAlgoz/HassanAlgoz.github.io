@@ -1,6 +1,6 @@
 title = Comparing Server-side Languages
 desc = Comparing Go, PHP, Java, Python, and Node.js
-date = 2020-05-25
+date = 2020-05
 dir = ltr
 lang = en
 ---

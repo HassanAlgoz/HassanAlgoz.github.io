@@ -1,5 +1,12 @@
 [
     {
+        "title": "وحدات جافا سكريبت | ES Modules",
+        "link": "https://www.youtube.com/playlist?list=PLrvHCesHYw3_60MXLCO5okXd7uTUz5VJa",
+        "img": "https://i.ytimg.com/vi/5_AuaCbeECI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAp6u9RWz5rYGVy_5-ilGcmIYgw4A",
+        "category": "courses",
+        "desc": "حديثنا في هذه السلسلة عن تركيب الكود في جافاسكريب، سنتكلم عن: التصدير بـ export الاستيراد بـ import صيغ الوحدات في جافاسكريبت JavaScript Module Formats المحددات Module Specifiers أداة إدارة الحِزَم npm - Node Package Manager"
+    },
+    {
         "title": "المصفوفات في جافاسكريبت",
         "link": "https://www.youtube.com/playlist?list=PLrvHCesHYw3_sgDBJMpTPcCCttEtrlB9y",
         "img": "https://i.ytimg.com/vi/7SWeIraMpIc/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCMrKARd8kykn-wdJO9A-A57chiBQ",
