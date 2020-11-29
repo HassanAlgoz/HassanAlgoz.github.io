@@ -4,11 +4,17 @@
     <% include src/parts/_head.ejs %>
     <title><%= title %> - <%= date %></title>
     <link rel="stylesheet" href="/posts/layout.css">
+    <script src="/posts/layout.js" defer async></script>
 </head>
 <body>
     <% include src/parts/_nav.ejs %>
-    <div class="wrapper" dir="<%= dir %>">
-        <%- body %>
+    <div class="post-container" dir="<%= dir %>">
+        <h1><%= title %></h1>
+        <div class="publish-date">نشر في <%= date %></div>
+        <div class="reading-time"></div>
+        <div class="post-body">
+            <%- body %>
+        </div>
     </div>
     <% include src/parts/_footer.ejs %>
 </body>

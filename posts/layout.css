@@ -1,3 +1,9 @@
+.post-container {
+    max-width: 720px;
+    padding: 16px;
+    margin: 0 auto;
+}
+
 h1,
 h2 {
     margin-bottom: 0;
@@ -19,4 +25,12 @@ p {
 code {
     background-color: #ffecec;
     color: rgb(236, 97, 97);
+}
+
+.publish-date {
+    font-size: 0.8rem;
+}
+
+.reading-time {
+    font-size: 0.8rem;
 }

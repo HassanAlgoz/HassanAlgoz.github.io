@@ -59,7 +59,7 @@ body,
 #code {
 	grid-area: code;
 	direction: rtl;
-	font: 14px 'Droid Arabic Kufi', monospace;
+	font: 16px 'Droid Arabic Naskh', monospace;
 	vertical-align: middle;
 	background-color: #131314;
 	vertical-align: baseline;
@@ -75,7 +75,7 @@ body,
 #lineNumbers {
 	grid-area: lineNumbers;
 	direction: rtl;
-	font: 14px 'Droid Arabic Kufi', monospace;
+	font: 16px 'Droid Arabic Naskh', monospace;
 	vertical-align: text-bottom;
 	background-color: #131314;
 	vertical-align: baseline;
@@ -93,8 +93,8 @@ body,
 	color: black;
 	direction: rtl;
 	overflow-y: auto;
-	font-size: 14px;
-	font-family: 'Droid Arabic Kufi', monospace;
+	font-size: 16px;
+	font-family: 'Droid Arabic Naskh', monospace;
 	padding: 14px;
 }
 #bottomBar {

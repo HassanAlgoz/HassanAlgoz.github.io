@@ -1,9 +1,13 @@
 title = علوم الحاسوب (مقدمة مختصرة)
 desc = محاولة تصوير علوم الحاسوب للقارئ ليتعرف عليه
-date = 2020-09
+date = 2020-09-00
 dir = rtl
 lang = ar
 ---
+<blockquote class="twitter-tweet" data-lang="ar" data-dnt="true" data-theme="light"><p lang="ar" dir="rtl">علوم الحاسوب (مقدمة مختصرة) 2020 <a href="https://t.co/GQ9hGx3YcI">https://t.co/GQ9hGx3YcI</a> <br>هذا المقطع يعطيك تصوُّر عن علوم الحاسب بشكل مختصر في نصف ساعة.</p>&mdash; حسان القوز (@Hassan_Algoz) <a href="https://twitter.com/Hassan_Algoz/status/1304631399639642112?ref_src=twsrc%5Etfw">١٢ سبتمبر ٢٠٢٠</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+اكتب ردًّا على التغيردة للتعليق على الموضوع، أو على مقطع اليوتيوب.
+
 # علوم الحاسوب
 علوم الحاسوب تُعنى بإيجاد حلول كُلّيَّة خوارزمية للمسائل؛ فالحاسوب ما هو إلا أداة تنفيذ خوارزميات ، والخوارزميات ما هي إلا خطوات المعالجة المؤدية للحل. ونقصد بالحل الكلي: المُجرَّد عن أعيان المسألة. فيمكن أن نقول أن المبحث الأول في علوم الحاسوب هو الخوارزميات.
 

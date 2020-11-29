@@ -67,7 +67,7 @@ function render() {
     // Render Posts
     (() => {
         el.postsListView.innerHTML = `
-            <ul class="posts-list">
+            <table class="posts-list">
                 ${model.posts
             .filter((v, idx, array) => idx >= model.offset && idx < Math.min(model.offset + model.limit, array.length))
             .sort((a, b) => {
@@ -80,12 +80,13 @@ function render() {
             })
             .map(c => `
                 ${c.dir === "ltr"
-            ? "<li class=\"\" dir=\"rtl\">"
-            : "<li class=\"\" dir=\"rtl\">"}
-                        <a href="${c.link}">${c.title} <small>— ${c.date}</small></a>
-                    </li>
+            ? "<tr class=\"\" dir=\"rtl\">"
+            : "<tr class=\"\" dir=\"rtl\">"}
+                    <td><a href="${c.link}"><small>${c.date}</small></a></td>
+                    <td><a href="${c.link}">${c.title}</a></td>
+                </tr>
                 `).join("")}
-            </ul>
+            </table>
         `;
     })();
 
