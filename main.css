@@ -2,13 +2,16 @@
 @import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 
 html, body {
+    color: #333;
+    box-sizing: border-box;
     position: relative;
 	width: 100%;
 	height: 100%;
-	font-size: 1.1rem;
 	padding: 0;
 	margin: 0;
+	/* font-size: 19px; */
 }
+
 
 [dir=rtl] {
     font-family: 'Droid Arabic Naskh', 'lucida grande', verdana, tahoma, arial, sans-serif;
@@ -24,6 +27,10 @@ html, body {
 
 a {
     text-decoration: none;
+}
+
+.post-container a:visited {
+    color: blueviolet;
 }
 
 .no-underline {

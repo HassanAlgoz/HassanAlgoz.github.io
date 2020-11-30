@@ -6,5 +6,5 @@ window.addEventListener("load", () => {
     const time = words.length / READING_SPEED;
 
     const $readingTime = document.getElementsByClassName("reading-time").item(0);
-    $readingTime.textContent = `مدة القراءة: ${Math.ceil(time).toFixed(0)} د`;
+    $readingTime.textContent = `${Math.ceil(time).toFixed(0)} د`;
 });

@@ -10,8 +10,16 @@
     <% include src/parts/_nav.ejs %>
     <div class="post-container" dir="<%= dir %>">
         <h1><%= title %></h1>
-        <div class="publish-date">نشر في <%= date %></div>
-        <div class="reading-time"></div>
+        <table class="font-small">
+            <tr class="publish-date">
+                <td>تاريخ النشر:</td>
+                <td><%= date %></td>
+            </tr>
+            <tr>
+                <td>مدة القراءة:</td>
+                <td class="reading-time"></td>
+            </tr>
+        </table>
         <div class="post-body">
             <%- body %>
         </div>
