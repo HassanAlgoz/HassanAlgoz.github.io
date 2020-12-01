@@ -129,6 +129,13 @@ lang=ar
 
 وليس من الأمانة ترقيع الأغلاط، ولا إسكات الأخطاء، أو تعمُّد مخالفة وصف الإجراء لتفاصيله، أو افتعال الأغلاط أو تعمُّد الإنشاء الهشّ، فإنَّ فعل ذلك في البرمجيات مثل فعله في الإنشاءات (المباني).
 
+
+-----
+
+# التعليق
+للتعليق على الموضوع، اكتب ردًّا تحت هذه التغريدة:
+<blockquote class="twitter-tweet" data-lang="ar" data-dnt="true"><p lang="ar" dir="rtl">مقال: <a href="https://t.co/0Codk79PdN">https://t.co/0Codk79PdN</a><br>... بعد فترة ومن غير أي تعديل في النص البرمجي، تظهر مشاكل جديدة غير متوقَّعة! نضطر لإيقاف البرنامج وإصلاحه، ثم نطلقه ثانيةً فيلبث فترة من الزمان، ثم تأتي الشكاوي من المستخدمين!<br><br>للتعليق على الموضوع ردّ على هذه التغريدة</p>&mdash; حسان القوز (@Hassan_Algoz) <a href="https://twitter.com/Hassan_Algoz/status/1333636482687508480?ref_src=twsrc%5Etfw">١ ديسمبر ٢٠٢٠</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 # مصادر
 - تفصيل دقيق ونقل تجربة فريدة: [نموذج الخطأ - مدوَّنة جو دفّي](http://joeduffyblog.com/2016/02/07/the-error-model/)
 - نصائح عملية مفصَّلة: [معالجة الخطأ في نود - جوي نِت](https://www.joyent.com/node-js/production/design/errors)
