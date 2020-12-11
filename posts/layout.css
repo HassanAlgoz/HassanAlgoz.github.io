@@ -1,3 +1,5 @@
+@import "vs2015.css";
+
 .post-container {
     max-width: 720px;
     padding: 16px;
@@ -37,6 +39,10 @@ p {
 code {
     background-color: #ffecec;
     color: rgb(236, 97, 97);
+}
+
+pre code {
+    direction: ltr;
 }
 
 .font-small {
